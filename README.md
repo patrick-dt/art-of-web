@@ -1,4 +1,15 @@
-# Art of Web
+<h1 align="center">Art of Web</h1>
+
+<p align="center">
+  <a href="PRINCIPLES.md">Principles</a> |
+  <a href="LICENSE">License</a> |
+  <a href="https://github.com/patrick-dt/art-of-web/issues">Issues</a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT" /></a>
+  <a href="https://github.com/patrick-dt/art-of-web/stargazers"><img src="https://img.shields.io/github/stars/patrick-dt/art-of-web" alt="Stars" /></a>
+</p>
 
 Shared **web development principles** and a **pre-launch checklist**.
 
