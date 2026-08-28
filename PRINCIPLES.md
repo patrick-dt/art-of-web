@@ -29,6 +29,17 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - No ugly / auto-generated class names (e.g. `DivBlock234`).
 - Prefer reuse over one-off markup.
 
+### Interactions
+
+- Links are links — use `<a>` (or framework `<Link>`) for navigation, not `<button>` or `<div>`.
+- Hit targets: visual target < 24px → expand to ≥ 24px; on mobile ≥ 44px.
+- Never disable browser zoom (no `maximum-scale=1` viewport hacks).
+- Modals, menus, dialogs: trap focus while open; return focus on close (WAI-ARIA patterns).
+- Semantics before ARIA — prefer native elements (`button`, `label`, `table`) over `aria-*`.
+- Icon-only controls need an accessible name (`aria-label` or visible text).
+- Status cues beyond color — errors, success, and warnings include text, not color alone.
+- Sticky headers, overlays, and fixed UI must not obscure the focused element.
+
 ### CSS / Tailwind
 
 - Utility-first (Tailwind). Custom CSS only when utilities can't.
@@ -40,6 +51,8 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Pair `:hover` with `:focus-visible` on interactive elements.
 - Avoid `!important` unless overriding third-party.
 - Keep class lists readable; extract repeated patterns into components.
+- `scroll-margin-top` on anchored headings (in-page nav / TOC links).
+- `touch-action: manipulation` on tap controls (reduces double-tap zoom delay).
 
 ### Motion
 
@@ -48,6 +61,7 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - When JS is needed: GSAP. Use clear easing (e.g. `power2.out`, `power3.inOut`) — avoid linear unless intentional.
 - Prefer `autoAlpha` over `opacity` (also toggles `visibility`).
 - Prefer transforms + `autoAlpha` over layout props (`top`, `height`, etc.).
+- Never `transition: all` — animate only intended properties (`opacity`, `transform`, etc.).
 - Use `gsap.matchMedia()` for breakpoint-specific motion.
 - Kill / clean up GSAP on unmount or page leave (no orphaned tweens / ScrollTriggers).
 - Respect `prefers-reduced-motion`: reduce or disable non-essential motion.
@@ -74,12 +88,21 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] No placeholder / lorem / dummy links
 - [ ] Final logos, images, copy, contact details
 - [ ] Favicon (+ apple-touch if needed)
+- [ ] Empty, error, and sparse states designed (not just happy path)
+- [ ] Page `<title>` matches current page context
+- [ ] `theme-color` meta matches page background (mobile browser chrome)
 
 #### Forms
 - [ ] All fields work (required, validation, error states)
 - [ ] Success / error messaging
 - [ ] Submit delivers to correct destination
 - [ ] Spam protection (honeypot / captcha if needed)
+- [ ] Every control has a visible `<label>` (or equivalent accessible name)
+- [ ] Errors next to fields; first error focused on submit
+- [ ] Mobile inputs ≥ 16px font size (avoids iOS auto-zoom)
+- [ ] Paste works in all inputs (incl. OTP / codes)
+- [ ] `autocomplete` + meaningful `name` where autofill applies
+- [ ] Submit: button disabled in-flight; original label still visible
 - [ ] Labels + a11y (focus, keyboard)
 - [ ] Tested on mobile
 
@@ -133,6 +156,8 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] Heading hierarchy
 - [ ] Skip link or equivalent landmark nav
 - [ ] Contrast check on key text / CTAs
+- [ ] Keyboard-only walkthrough of main flows (nav, forms, modals)
+- [ ] Icon-only buttons have accessible names
 
 #### Testing
 - [ ] Mobile

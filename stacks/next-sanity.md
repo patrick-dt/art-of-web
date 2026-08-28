@@ -16,6 +16,11 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md) — walk **All pro
 - Live preview or Presentation tool wired if used.
 - Sanity tokens never exposed client-side.
 - Route handlers for forms/webhooks separate from page data fetching.
+- Hydration-safe inputs — focus and value must not reset after hydration.
+- URL as state — filters, tabs, pagination in the URL (shareable; Back/Forward works).
+- Optimistic updates where appropriate — update UI immediately; rollback on failure.
+- Suspense / loading: min show delay (~150–300 ms) to avoid flicker on fast responses.
+- Keep client components small; profile re-renders if interactions feel sluggish.
 
 ### Sanity
 

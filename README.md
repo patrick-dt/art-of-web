@@ -51,7 +51,9 @@ flowchart TD
 | [stacks/astro-sanity.md](stacks/astro-sanity.md) | Astro + Sanity build rules |
 | [stacks/next-sanity.md](stacks/next-sanity.md) | Next.js + Sanity build rules |
 
-**Shared dev principles** cover sizing, a11y, CSS/Tailwind, and motion (CSS first, GSAP when needed).
+**Shared dev principles** cover sizing, a11y, interactions, CSS/Tailwind, and motion (CSS first, GSAP when needed).
+
+**References:** [Vercel Web Interface Guidelines](https://vercel.com/design/guidelines) — deeper interaction and form UX detail; we adopt the parts that fit client/marketing sites.
 
 **Pre-launch checklist** is layered: walk **All projects** every time, then only the technology sections for your stack (CMS, Sanity, Astro, or Next.js).
 
