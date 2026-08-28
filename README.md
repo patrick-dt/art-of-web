@@ -2,6 +2,9 @@
 
 <p align="center">
   <a href="PRINCIPLES.md">Principles</a> |
+  <a href="stacks/astro.md">Astro</a> |
+  <a href="stacks/astro-sanity.md">Astro + Sanity</a> |
+  <a href="stacks/next-sanity.md">Next.js + Sanity</a> |
   <a href="LICENSE">License</a> |
   <a href="https://github.com/patrick-dt/art-of-web/issues">Issues</a>
 </p>
@@ -11,26 +14,59 @@
   <a href="https://github.com/patrick-dt/art-of-web/stargazers"><img src="https://img.shields.io/github/stars/patrick-dt/art-of-web" alt="Stars" /></a>
 </p>
 
-Shared **web development principles** and a **pre-launch checklist**.
+Shared **web development principles** and a **pre-launch checklist** — with stack-specific addenda for Astro, Astro + Sanity, and Next.js + Sanity.
 
-## What’s in here
+## Structure
+
+```mermaid
+flowchart TD
+  core[PRINCIPLES.md shared core]
+  checklistAll[Checklist: All projects]
+  checklistCMS[Checklist: CMS]
+  checklistSanity[Checklist: Sanity]
+  checklistAstro[Checklist: Astro]
+  checklistNext[Checklist: Next.js]
+  astro[stacks/astro.md]
+  astroSanity[stacks/astro-sanity.md]
+  nextSanity[stacks/next-sanity.md]
+  core --> checklistAll
+  core --> checklistCMS
+  core --> checklistSanity
+  core --> checklistAstro
+  core --> checklistNext
+  core --> astro
+  core --> astroSanity
+  core --> nextSanity
+  astro --> astroRules[Astro build rules]
+  astroSanity --> asRules[Astro + Sanity rules]
+  nextSanity --> nsRules[Next.js + Sanity rules]
+```
+
+## What's in here
 
 | File | Purpose |
 |------|---------|
-| [PRINCIPLES.md](PRINCIPLES.md) | Single source of truth — build rules + launch checklist |
+| [PRINCIPLES.md](PRINCIPLES.md) | Shared dev principles + layered pre-launch checklist |
+| [stacks/astro.md](stacks/astro.md) | Astro-only build rules |
+| [stacks/astro-sanity.md](stacks/astro-sanity.md) | Astro + Sanity build rules |
+| [stacks/next-sanity.md](stacks/next-sanity.md) | Next.js + Sanity build rules |
 
-**Dev principles** cover sizing, a11y, CSS/Tailwind, motion (CSS first, GSAP when needed), and Astro.
+**Shared dev principles** cover sizing, a11y, CSS/Tailwind, and motion (CSS first, GSAP when needed).
 
-**Pre-launch checklist** covers access, legal, content, forms, SEO, analytics, GSC, performance, go-live, a11y, testing, and handoff.
+**Pre-launch checklist** is layered: walk **All projects** every time, then only the technology sections for your stack (CMS, Sanity, Astro, or Next.js).
 
 ## How to use
 
-1. Open [PRINCIPLES.md](PRINCIPLES.md).
-2. Follow the **Dev Principles** while building.
-3. Before launch, walk the checklist top to bottom.
-4. Copy or adapt the file into your own projects if you want a project-specific variant — keep this repo as the shared baseline.
+1. Open [PRINCIPLES.md](PRINCIPLES.md) for shared build rules.
+2. Pick your stack addendum for framework- and CMS-specific rules.
+3. Before launch, walk the checklist: **All projects**, then the sections that match your stack.
+4. Copy or adapt into your own projects — keep this repo as the shared baseline.
 
-Stack notes (Tailwind, Astro, GSAP) reflect a common modern setup. Trim or extend sections for your stack.
+| Stack | Dev rules | Checklist sections |
+|-------|-----------|-------------------|
+| Astro only | [stacks/astro.md](stacks/astro.md) | All projects → Astro |
+| Astro + Sanity | [stacks/astro-sanity.md](stacks/astro-sanity.md) | All projects → CMS → Sanity → Astro |
+| Next.js + Sanity | [stacks/next-sanity.md](stacks/next-sanity.md) | All projects → CMS → Sanity → Next.js |
 
 ## Contribute
 
@@ -38,7 +74,7 @@ PRs and issues welcome.
 
 - Keep wording short and plain English.
 - Prefer checklist items that are clear pass/fail gates.
-- Don’t bloat with rare edge cases — open an issue first if unsure.
+- Don't bloat with rare edge cases — open an issue first if unsure.
 - One concern per PR when possible.
 
 ## License
