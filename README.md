@@ -14,7 +14,7 @@
   <a href="https://github.com/patrick-dt/art-of-web/stargazers"><img src="https://img.shields.io/github/stars/patrick-dt/art-of-web" alt="Stars" /></a>
 </p>
 
-Shared **web development principles** and a **pre-launch checklist** — with stack-specific addenda for Astro, Astro + Sanity, and Next.js + Sanity.
+Shared **web development principles** and a **pre-launch checklist**, with stack-specific addenda for Astro, Astro + Sanity, and Next.js + Sanity.
 
 ## Structure
 
@@ -53,7 +53,7 @@ flowchart TD
 
 **Shared dev principles** cover sizing, a11y, interactions, CSS/Tailwind, and motion (CSS first, GSAP when needed).
 
-**References:** [Vercel Web Interface Guidelines](https://vercel.com/design/guidelines) — deeper interaction and form UX detail; we adopt the parts that fit client/marketing sites.
+**References:** [Vercel Web Interface Guidelines](https://vercel.com/design/guidelines). Deeper interaction and form UX detail; we adopt the parts that fit client/marketing sites.
 
 **Pre-launch checklist** is layered: walk **All projects** every time, then only the technology sections for your stack (CMS, Sanity, Astro, or Next.js).
 
@@ -62,7 +62,7 @@ flowchart TD
 1. Open [PRINCIPLES.md](PRINCIPLES.md) for shared build rules.
 2. Pick your stack addendum for framework- and CMS-specific rules.
 3. Before launch, walk the checklist: **All projects**, then the sections that match your stack.
-4. Copy or adapt into your own projects — keep this repo as the shared baseline.
+4. Copy or adapt into your own projects; keep this repo as the shared baseline.
 
 | Stack | Dev rules | Checklist sections |
 |-------|-----------|-------------------|
@@ -76,7 +76,7 @@ PRs and issues welcome.
 
 - Keep wording short and plain English.
 - Prefer checklist items that are clear pass/fail gates.
-- Don't bloat with rare edge cases — open an issue first if unsure.
+- Don't bloat with rare edge cases; open an issue first if unsure.
 - One concern per PR when possible.
 
 ## License

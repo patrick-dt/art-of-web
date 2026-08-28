@@ -28,23 +28,24 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Optimize images (size, format, lazy-load below fold).
 - No ugly / auto-generated class names (e.g. `DivBlock234`).
 - Prefer reuse over one-off markup.
+- No em dashes in copy. Use commas, colons, or separate sentences instead.
 
 ### Interactions
 
-- Links are links — use `<a>` (or framework `<Link>`) for navigation, not `<button>` or `<div>`.
+- Links are links: use `<a>` (or framework `<Link>`) for navigation, not `<button>` or `<div>`.
 - Hit targets: visual target < 24px → expand to ≥ 24px; on mobile ≥ 44px.
 - Never disable browser zoom (no `maximum-scale=1` viewport hacks).
 - Modals, menus, dialogs: trap focus while open; return focus on close (WAI-ARIA patterns).
-- Semantics before ARIA — prefer native elements (`button`, `label`, `table`) over `aria-*`.
+- Semantics before ARIA: prefer native elements (`button`, `label`, `table`) over `aria-*`.
 - Icon-only controls need an accessible name (`aria-label` or visible text).
-- Status cues beyond color — errors, success, and warnings include text, not color alone.
+- Status cues beyond color: errors, success, and warnings include text, not color alone.
 - Sticky headers, overlays, and fixed UI must not obscure the focused element.
 
 ### CSS / Tailwind
 
 - Utility-first (Tailwind). Custom CSS only when utilities can't.
 - Colors via design tokens / CSS vars (e.g. `--color-*`). No raw hex in components.
-- Spacing via scale / tokens — no magic numbers.
+- Spacing via scale / tokens; no magic numbers.
 - Typography via project `text-*` / type scale. No ad-hoc font sizes.
 - Fonts: load once (e.g. `@font-face`); use designated font utilities only.
 - Breakpoints: `md:` (768px), `lg:` (1024px) unless project defines otherwise.
@@ -58,10 +59,10 @@ Single source of truth. Shared build rules + pre-launch checklist.
 
 - CSS first for hover, focus, and simple transitions (`transition`, `@keyframes`).
 - No JS for motion unless CSS can't do it (timeline, scroll-driven, sequenced, interruptible).
-- When JS is needed: GSAP. Use clear easing (e.g. `power2.out`, `power3.inOut`) — avoid linear unless intentional.
+- When JS is needed: GSAP. Use clear easing (e.g. `power2.out`, `power3.inOut`); avoid linear unless intentional.
 - Prefer `autoAlpha` over `opacity` (also toggles `visibility`).
 - Prefer transforms + `autoAlpha` over layout props (`top`, `height`, etc.).
-- Never `transition: all` — animate only intended properties (`opacity`, `transform`, etc.).
+- Never `transition: all`: animate only intended properties (`opacity`, `transform`, etc.).
 - Use `gsap.matchMedia()` for breakpoint-specific motion.
 - Kill / clean up GSAP on unmount or page leave (no orphaned tweens / ScrollTriggers).
 - Respect `prefers-reduced-motion`: reduce or disable non-essential motion.
@@ -75,7 +76,7 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 ### All projects
 
 #### Access
-- [ ] DNS access confirmed — or contact person informed / reachable
+- [ ] DNS access confirmed, or contact person informed / reachable
 
 #### Legal & Utility
 - [ ] Cookies / consent banner
@@ -86,6 +87,7 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 
 #### Content & Assets
 - [ ] No placeholder / lorem / dummy links
+- [ ] No em dashes in user-facing copy
 - [ ] Final logos, images, copy, contact details
 - [ ] Favicon (+ apple-touch if needed)
 - [ ] Empty, error, and sparse states designed (not just happy path)
@@ -172,14 +174,14 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] No console errors on key pages
 
 #### Handoff
-- [ ] Webflow only: code fully embedded — or sandbox handed over
+- [ ] Webflow only: code fully embedded, or sandbox handed over
 - [ ] Client credentials / access documented
 
 ### CMS
 
 For any project with a content backend.
 
-- [ ] Collection Lists — sorting, filter, visibility
+- [ ] Collection Lists: sorting, filter, visibility
 - [ ] CMS handoff doc for editors
 - [ ] No placeholder / draft slugs indexed
 
