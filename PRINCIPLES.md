@@ -14,7 +14,9 @@ Single source of truth. Shared build rules + pre-launch checklist.
 |-------|-----------|-------------------|
 | Astro only | [stacks/astro.md](stacks/astro.md) | All projects → Astro |
 | Astro + Sanity | [stacks/astro-sanity.md](stacks/astro-sanity.md) | All projects → CMS → Sanity → Astro |
+| Astro + Supabase | [stacks/astro-supabase.md](stacks/astro-supabase.md) | All projects → Supabase → Astro |
 | Next.js + Sanity | [stacks/next-sanity.md](stacks/next-sanity.md) | All projects → CMS → Sanity → Next.js |
+| Next.js + Supabase | [stacks/next-supabase.md](stacks/next-supabase.md) | All projects → Supabase → Next.js |
 
 ---
 
@@ -22,7 +24,7 @@ Single source of truth. Shared build rules + pre-launch checklist.
 
 - Fluid sizing. Prefer relative units over fixed.
 - Size in `rem`. Never absolute `px` (borders/outlines ok).
-- A11y: semantic HTML, contrast, `focus-visible`.
+- A11y: semantic HTML, contrast, [`focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible).
 - One `h1` per page; heading order without skips.
 - Interactive elements: keyboard reachable + visible focus.
 - Optimize images (size, format, lazy-load below fold).
@@ -35,7 +37,7 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Links are links: use `<a>` (or framework `<Link>`) for navigation, not `<button>` or `<div>`.
 - Hit targets: visual target < 24px → expand to ≥ 24px; on mobile ≥ 44px.
 - Never disable browser zoom (no `maximum-scale=1` viewport hacks).
-- Modals, menus, dialogs: trap focus while open; return focus on close (WAI-ARIA patterns).
+- Modals, menus, dialogs: trap focus while open; return focus on close ([WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)).
 - Semantics before ARIA: prefer native elements (`button`, `label`, `table`) over `aria-*`.
 - Icon-only controls need an accessible name (`aria-label` or visible text).
 - Status cues beyond color: errors, success, and warnings include text, not color alone.
@@ -43,7 +45,7 @@ Single source of truth. Shared build rules + pre-launch checklist.
 
 ### CSS / Tailwind
 
-- Utility-first (Tailwind). Custom CSS only when utilities can't.
+- Utility-first ([Tailwind](https://tailwindcss.com/docs)). Custom CSS only when utilities can't.
 - Colors via design tokens / CSS vars (e.g. `--color-*`). No raw hex in components.
 - Spacing via scale / tokens; no magic numbers.
 - Typography via project `text-*` / type scale. No ad-hoc font sizes.
@@ -52,20 +54,20 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Pair `:hover` with `:focus-visible` on interactive elements.
 - Avoid `!important` unless overriding third-party.
 - Keep class lists readable; extract repeated patterns into components.
-- `scroll-margin-top` on anchored headings (in-page nav / TOC links).
+- [`scroll-margin-top`](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top) on anchored headings (in-page nav / TOC links).
 - `touch-action: manipulation` on tap controls (reduces double-tap zoom delay).
 
 ### Motion
 
 - CSS first for hover, focus, and simple transitions (`transition`, `@keyframes`).
 - No JS for motion unless CSS can't do it (timeline, scroll-driven, sequenced, interruptible).
-- When JS is needed: GSAP. Use clear easing (e.g. `power2.out`, `power3.inOut`); avoid linear unless intentional.
+- When JS is needed: [GSAP](https://gsap.com/docs/v3/). Use clear easing (e.g. `power2.out`, `power3.inOut`); avoid linear unless intentional.
 - Prefer `autoAlpha` over `opacity` (also toggles `visibility`).
 - Prefer transforms + `autoAlpha` over layout props (`top`, `height`, etc.).
 - Never `transition: all`: animate only intended properties (`opacity`, `transform`, etc.).
 - Use `gsap.matchMedia()` for breakpoint-specific motion.
 - Kill / clean up GSAP on unmount or page leave (no orphaned tweens / ScrollTriggers).
-- Respect `prefers-reduced-motion`: reduce or disable non-essential motion.
+- Respect [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion): reduce or disable non-essential motion.
 
 ---
 
@@ -92,7 +94,7 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] Favicon (+ apple-touch if needed)
 - [ ] Empty, error, and sparse states designed (not just happy path)
 - [ ] Page `<title>` matches current page context
-- [ ] `theme-color` meta matches page background (mobile browser chrome)
+- [ ] [`theme-color`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) meta matches page background (mobile browser chrome)
 
 #### Forms
 - [ ] All fields work (required, validation, error states)
@@ -103,7 +105,7 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] Errors next to fields; first error focused on submit
 - [ ] Mobile inputs ≥ 16px font size (avoids iOS auto-zoom)
 - [ ] Paste works in all inputs (incl. OTP / codes)
-- [ ] `autocomplete` + meaningful `name` where autofill applies
+- [ ] [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) + meaningful `name` where autofill applies
 - [ ] Submit: button disabled in-flight; original label still visible
 - [ ] Labels + a11y (focus, keyboard)
 - [ ] Tested on mobile
@@ -111,9 +113,9 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 #### SEO
 - [ ] Image alt tags
 - [ ] Unique title + description per indexable page
-- [ ] Open Graph image & settings
+- [ ] [Open Graph](https://ogp.me/) image & settings
 - [ ] Social share preview checked
-- [ ] Schema.org
+- [ ] [Schema.org](https://schema.org/)
 - [ ] Semantic tags (nav, section, heading, footer)
 - [ ] Heading hierarchy matches outline
 - [ ] Canonical URLs
@@ -124,20 +126,20 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
   - [ ] No redirect chains
 
 #### Analytics
-- [ ] Tracking installed (GA4 / GTM / agreed tool)
+- [ ] Tracking installed ([GA4](https://developers.google.com/analytics/devguides/collection/ga4) / [GTM](https://developers.google.com/tag-platform/tag-manager) / agreed tool)
 - [ ] Consent mode / cookie gate respects choice
 - [ ] Key events fire (form submit, CTA clicks, etc.)
 - [ ] No double-counting
 - [ ] Test in debug / preview before go-live
 
 #### Google Search Console
-- [ ] Property verified
+- [ ] Property verified ([Google Search Console](https://search.google.com/search-console/about))
 - [ ] Sitemap submitted
 - [ ] No critical coverage / indexing errors
 - [ ] Inspect key URLs (homepage + main landing pages)
 
 #### Performance
-- [ ] LCP, CLS, INP in acceptable range (mobile + desktop)
+- [ ] [LCP, CLS, INP](https://web.dev/vitals/) in acceptable range (mobile + desktop)
 - [ ] Images sized / compressed; lazy-load below fold
 - [ ] Fonts not blocking render (subset / `font-display`)
 - [ ] No unused heavy scripts
@@ -195,16 +197,28 @@ When using Sanity Studio or Sanity content.
 - [ ] Published vs draft content verified on production
 - [ ] Image alt text populated in Sanity fields where applicable
 
+### Supabase
+
+When using Supabase for auth, database, or storage.
+
+- [ ] Project URL + anon key in env vars; **service role key server-only** (never in client bundle)
+- [ ] [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) enabled on all public tables; policies tested for anon vs authenticated
+- [ ] Auth redirect URLs set for production + preview domains
+- [ ] Auth flows tested (sign up, sign in, sign out, password reset if used)
+- [ ] [Storage](https://supabase.com/docs/guides/storage) buckets: public/private as intended; RLS on buckets if private
+- [ ] Forms / mutations hit production Supabase project (not staging/local)
+- [ ] Realtime subscriptions cleaned up on unmount (if used)
+
 ### Astro
 
-When building with Astro (alone or with Sanity).
+When building with Astro (alone or with Sanity / Supabase).
 
 - [ ] Rebuild or webhook fires on publish (static generation)
 - [ ] No half-wired embeds / sandbox on handoff
 
 ### Next.js
 
-When building with Next.js (+ Sanity).
+When building with Next.js (+ Sanity / Supabase).
 
 - [ ] Draft mode protected; not open in production
 - [ ] On-demand revalidation tested after CMS publish
