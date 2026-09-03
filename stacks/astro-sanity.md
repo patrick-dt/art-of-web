@@ -4,7 +4,8 @@ Stack addendum for content-driven Astro sites with Sanity Studio.
 
 Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projects** → **CMS** → **Sanity** → **Astro**.
 
-Astro-specific rules: [astro.md](astro.md).
+Astro-specific rules + checklist: [astro.md](astro.md).
+Sanity checklist: [sanity.md](sanity.md) (also walk [cms.md](cms.md)).
 
 ---
 

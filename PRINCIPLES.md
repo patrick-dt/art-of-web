@@ -10,13 +10,13 @@ Single source of truth. Shared build rules + pre-launch checklist.
 
 ## Stack addenda
 
-| Stack | Dev rules | Checklist sections |
-|-------|-----------|-------------------|
-| Astro only | [stacks/astro.md](stacks/astro.md) | All projects → Astro |
-| Astro + Sanity | [stacks/astro-sanity.md](stacks/astro-sanity.md) | All projects → CMS → Sanity → Astro |
-| Astro + Supabase | [stacks/astro-supabase.md](stacks/astro-supabase.md) | All projects → Supabase → Astro |
-| Next.js + Sanity | [stacks/next-sanity.md](stacks/next-sanity.md) | All projects → CMS → Sanity → Next.js |
-| Next.js + Supabase | [stacks/next-supabase.md](stacks/next-supabase.md) | All projects → Supabase → Next.js |
+| Stack | Addendum | Checklists to walk |
+|-------|----------|-------------------|
+| Astro only | [stacks/astro.md](stacks/astro.md) | All projects → [Astro](stacks/astro.md) |
+| Astro + Sanity | [stacks/astro-sanity.md](stacks/astro-sanity.md) | All projects → [CMS](stacks/cms.md) → [Sanity](stacks/sanity.md) → [Astro](stacks/astro.md) |
+| Astro + Supabase | [stacks/astro-supabase.md](stacks/astro-supabase.md) | All projects → [Supabase](stacks/supabase.md) → [Astro](stacks/astro.md) |
+| Next.js + Sanity | [stacks/next-sanity.md](stacks/next-sanity.md) | All projects → [CMS](stacks/cms.md) → [Sanity](stacks/sanity.md) → [Next.js](stacks/next.md) |
+| Next.js + Supabase | [stacks/next-supabase.md](stacks/next-supabase.md) | All projects → [Supabase](stacks/supabase.md) → [Next.js](stacks/next.md) |
 
 ---
 
@@ -179,57 +179,4 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] Webflow only: code fully embedded, or sandbox handed over
 - [ ] Client credentials / access documented
 
-### CMS
-
-For any project with a content backend.
-
-- [ ] Collection Lists: sorting, filter, visibility
-- [ ] CMS handoff doc for editors
-- [ ] No placeholder / draft slugs indexed
-
-### Sanity
-
-When using Sanity Studio or Sanity content.
-
-- [ ] Studio deployed and reachable
-- [ ] CORS origins set for production + preview domains
-- [ ] Preview / visual editing tested end-to-end
-- [ ] Published vs draft content verified on production
-- [ ] Image alt text populated in Sanity fields where applicable
-
-#### Sanity Resources
-
-- [`sanity-plugin-media`](https://www.sanity.io/plugins/sanity-plugin-media) – media browser
-- [`@sanity/code-input`](https://www.sanity.io/plugins/code-input) – code editor with syntax highlighting
-- [`next-sanity`](https://www.sanity.io/plugins/next-sanity) – official Next.js toolkit
-- [`sanity-astro`](https://www.sanity.io/plugins/sanity-astro) – official Astro integration
-- [Official Sanity plugins](https://www.sanity.io/exchange/type=plugins/by=sanity)
-- [Sanity Recipes](https://www.sanity.io/recipes) – schema & code snippets
-
-### Supabase
-
-When using Supabase for auth, database, or storage.
-
-- [ ] Project URL + anon key in env vars; **service role key server-only** (never in client bundle)
-- [ ] [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) enabled on all public tables; policies tested for anon vs authenticated
-- [ ] Auth redirect URLs set for production + preview domains
-- [ ] Auth flows tested (sign up, sign in, sign out, password reset if used)
-- [ ] [Storage](https://supabase.com/docs/guides/storage) buckets: public/private as intended; RLS on buckets if private
-- [ ] Forms / mutations hit production Supabase project (not staging/local)
-- [ ] Realtime subscriptions cleaned up on unmount (if used)
-
-### Astro
-
-When building with Astro (alone or with Sanity / Supabase).
-
-- [ ] Rebuild or webhook fires on publish (static generation)
-- [ ] No half-wired embeds / sandbox on handoff
-
-### Next.js
-
-When building with Next.js (+ Sanity / Supabase).
-
-- [ ] Draft mode protected; not open in production
-- [ ] On-demand revalidation tested after CMS publish
-- [ ] No preview `noindex` leaking to production routes
-- [ ] Env vars set on host (e.g. Vercel); ISR/SSR shows fresh content after publish
+Stack-specific checklists live in the stack addendum files (see table above).

@@ -4,6 +4,9 @@ Stack addendum for Next.js App Router projects with Supabase.
 
 Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projects** → **Supabase** → **Next.js**.
 
+Next.js checklist: [next.md](next.md).
+Supabase checklist: [supabase.md](supabase.md).
+
 ---
 
 ## Dev Principles

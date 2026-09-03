@@ -4,6 +4,9 @@ Stack addendum for Next.js App Router projects with Sanity.
 
 Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projects** → **CMS** → **Sanity** → **Next.js**.
 
+Next.js checklist: [next.md](next.md).
+Sanity checklist: [sanity.md](sanity.md) (also walk [cms.md](cms.md)).
+
 ---
 
 ## Dev Principles

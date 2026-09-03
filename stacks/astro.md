@@ -13,3 +13,10 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projec
 - Prefer static where possible; add client JS only when needed ([`client:*` directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)).
 - Keep page files thin; logic and markup live in components.
 - Fully embed code or hand over a sandbox (no half-wired embeds).
+
+---
+
+## Checklist
+
+- [ ] Rebuild or webhook fires on publish (static generation)
+- [ ] No half-wired embeds / sandbox on handoff

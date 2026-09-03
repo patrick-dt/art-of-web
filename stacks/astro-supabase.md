@@ -4,7 +4,8 @@ Stack addendum for Astro projects with Supabase auth, database, or storage.
 
 Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projects** → **Supabase** → **Astro**.
 
-Astro-specific rules: [astro.md](astro.md).
+Astro-specific rules + checklist: [astro.md](astro.md).
+Supabase checklist: [supabase.md](supabase.md).
 
 ---
 
@@ -23,3 +24,4 @@ Astro-specific rules: [astro.md](astro.md).
 ### Astro
 
 - Reuse [astro.md](astro.md) rules for components, `<Image>`, static-first.
+
