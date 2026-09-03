@@ -18,3 +18,11 @@ Astro-specific rules: [astro.md](astro.md).
 - Preview route or [visual editing](https://www.sanity.io/docs/visual-editing) configured; drafts not on production.
 - Studio deployed; [CORS](https://www.sanity.io/docs/cors) set for prod + preview domains.
 - Content maps cleanly to frontend components (no one-off query shapes per page).
+
+### Resources
+
+- [`sanity-astro`](https://www.sanity.io/plugins/sanity-astro) – official Sanity integration for Astro
+- [`@sanity/code-input`](https://www.sanity.io/plugins/code-input) – code editor with syntax highlighting
+- [`sanity-plugin-media`](https://www.sanity.io/plugins/sanity-plugin-media) – media browser for managing assets
+- [Official Sanity plugins](https://www.sanity.io/exchange/type=plugins/by=sanity)
+- [Sanity Recipes](https://www.sanity.io/recipes) – schema & code snippets

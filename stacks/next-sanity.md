@@ -29,3 +29,11 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projec
 - Images via Sanity CDN / [`@sanity/image-url`](https://www.sanity.io/docs/apis-and-sdks/image-urls) as agreed.
 - Studio deployed; [CORS](https://www.sanity.io/docs/cors) set for prod + preview domains.
 - Content maps cleanly to frontend components (no one-off query shapes per page).
+
+### Resources
+
+- [`next-sanity`](https://www.sanity.io/plugins/next-sanity) – official Next.js toolkit (previews, Studio embedding, webhooks)
+- [`@sanity/code-input`](https://www.sanity.io/plugins/code-input) – code editor with syntax highlighting
+- [`sanity-plugin-media`](https://www.sanity.io/plugins/sanity-plugin-media) – media browser for managing assets
+- [Official Sanity plugins](https://www.sanity.io/exchange/type=plugins/by=sanity)
+- [Sanity Recipes](https://www.sanity.io/recipes) – schema & code snippets

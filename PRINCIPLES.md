@@ -197,6 +197,15 @@ When using Sanity Studio or Sanity content.
 - [ ] Published vs draft content verified on production
 - [ ] Image alt text populated in Sanity fields where applicable
 
+#### Sanity Resources
+
+- [`sanity-plugin-media`](https://www.sanity.io/plugins/sanity-plugin-media) – media browser
+- [`@sanity/code-input`](https://www.sanity.io/plugins/code-input) – code editor with syntax highlighting
+- [`next-sanity`](https://www.sanity.io/plugins/next-sanity) – official Next.js toolkit
+- [`sanity-astro`](https://www.sanity.io/plugins/sanity-astro) – official Astro integration
+- [Official Sanity plugins](https://www.sanity.io/exchange/type=plugins/by=sanity)
+- [Sanity Recipes](https://www.sanity.io/recipes) – schema & code snippets
+
 ### Supabase
 
 When using Supabase for auth, database, or storage.
