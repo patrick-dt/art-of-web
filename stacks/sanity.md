@@ -6,6 +6,12 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Also walk [CMS ch
 
 ---
 
+## Dev Principles
+
+- Default Studio preview: [`http://localhost:3333/`](http://localhost:3333/). Reuse it; don't spawn a second Studio. The frontend still uses its own default (Astro `4321`, Next.js `3000`).
+
+---
+
 ## Checklist
 
 - [ ] Studio deployed and reachable

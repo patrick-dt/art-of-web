@@ -13,6 +13,7 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Walk **All projec
 - Prefer static where possible; add client JS only when needed ([`client:*` directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)).
 - Keep page files thin; markup lives in components. Keep page-specific copy in those files, not in a central `data.ts`.
 - Fully embed code or hand over a sandbox (no half-wired embeds).
+- Default local preview: [`http://localhost:4321/`](http://localhost:4321/). Reuse it; don't spawn a second `dev` server. If another project already owns that port, use the next free one.
 
 ---
 

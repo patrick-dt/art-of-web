@@ -63,7 +63,7 @@ flowchart TD
 | [stacks/next-sanity.md](stacks/next-sanity.md) | Next.js + Sanity build rules |
 | [stacks/next-supabase.md](stacks/next-supabase.md) | Next.js + Supabase build rules |
 
-**Shared dev principles** cover sizing, a11y, markup/layout, interactions, CSS/Tailwind, and motion (CSS first, GSAP when needed).
+**Shared dev principles** cover sizing, a11y, markup/layout, local preview (reuse one `dev` server), interactions, CSS/Tailwind, and motion (CSS first, GSAP when needed).
 
 **References:** [Vercel Web Interface Guidelines](https://vercel.com/design/guidelines). Deeper interaction and form UX detail; we adopt the parts that fit client/marketing sites.
 

@@ -6,6 +6,12 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md).
 
 ---
 
+## Dev Principles
+
+- Default local preview: [`http://localhost:3000/`](http://localhost:3000/). Reuse it; don't spawn a second `dev` server. If another project already owns that port, use the next free one.
+
+---
+
 ## Checklist
 
 - [ ] Draft mode protected; not open in production

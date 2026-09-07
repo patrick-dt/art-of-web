@@ -32,6 +32,14 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Prefer reuse over one-off markup.
 - No em dashes in copy. Use commas, colons, or separate sentences instead.
 
+### Local preview
+
+- One `dev` server per project. Reuse it. File changes hot-reload; a second process does nothing useful.
+- Before starting anything, check existing terminals and open the URL already serving this project.
+- Defaults (unless the project overrides them): Astro [`http://localhost:4321/`](http://localhost:4321/), Next.js [`http://localhost:3000/`](http://localhost:3000/), Sanity Studio [`http://localhost:3333/`](http://localhost:3333/).
+- If the default port belongs to a *different* project, leave that server running. Use the next free port, or the URL this project's already-running server printed.
+- Cursor / agents must not spawn extra servers "to preview" or "to be safe". Open the existing URL. Start `dev` only when nothing is serving this project.
+
 ### Markup / layout
 
 - Landmark outside, container inside: `<section>` (or `header` / `nav` / `main` / `article` / `aside` / `footer`) wraps a site-wide container, not the reverse.
