@@ -8,7 +8,7 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md).
 
 ## Dev Principles
 
-- Default local preview: [`http://localhost:3000/`](http://localhost:3000/). Reuse it; don't spawn a second `dev` server. If another project already owns that port, use the next free one.
+- Default local preview: [`http://localhost:3000/`](http://localhost:3000/). HMR on that process is enough; don't spawn a second `dev` server. If another project already owns that port, don't kill it: use the next free one, or the URL this project already printed. See [Local preview](../PRINCIPLES.md#local-preview).
 
 ---
 

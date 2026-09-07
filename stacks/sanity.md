@@ -8,7 +8,7 @@ Shared rules and checklist: [PRINCIPLES.md](../PRINCIPLES.md). Also walk [CMS ch
 
 ## Dev Principles
 
-- Default Studio preview: [`http://localhost:3333/`](http://localhost:3333/). Reuse it; don't spawn a second Studio. The frontend still uses its own default (Astro `4321`, Next.js `3000`).
+- Default Studio preview: [`http://localhost:3333/`](http://localhost:3333/). Don't spawn a second Studio. If another project already owns that port, don't kill it: use the next free one, or the URL this Studio already printed. The frontend still uses its own default (Astro [`http://localhost:4321/`](http://localhost:4321/), Next.js [`http://localhost:3000/`](http://localhost:3000/)). See [Local preview](../PRINCIPLES.md#local-preview).
 
 ---
 

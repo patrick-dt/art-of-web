@@ -34,11 +34,12 @@ Single source of truth. Shared build rules + pre-launch checklist.
 
 ### Local preview
 
-- One `dev` server per project. Reuse it. File changes hot-reload; a second process does nothing useful.
+- Extra `dev` servers are not a framework need. They appear because Cursor and agents treat `npm run dev` as a default step without checking whether this project is already served.
+- HMR is enough. A running process at the default URL picks up file changes on its own. A second server does nothing useful except occupy the next ports (`4322`, `4323`, … once Astro's `4321` is taken).
 - Before starting anything, check existing terminals and open the URL already serving this project.
 - Defaults (unless the project overrides them): Astro [`http://localhost:4321/`](http://localhost:4321/), Next.js [`http://localhost:3000/`](http://localhost:3000/), Sanity Studio [`http://localhost:3333/`](http://localhost:3333/).
-- If the default port belongs to a *different* project, leave that server running. Use the next free port, or the URL this project's already-running server printed.
-- Cursor / agents must not spawn extra servers "to preview" or "to be safe". Open the existing URL. Start `dev` only when nothing is serving this project.
+- If the default port belongs to a *different* project, do not kill that server. Use the next free port, or the URL this project's already-running server printed.
+- Start `dev` only when nothing is serving this project.
 
 ### Markup / layout
 
