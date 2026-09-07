@@ -38,6 +38,8 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - HMR is enough. A running process at the default URL picks up file changes on its own. A second server does nothing useful except occupy the next ports (`4322`, `4323`, … once Astro's `4321` is taken).
 - Before starting anything, check existing terminals and open the URL already serving this project.
 - Defaults (unless the project overrides them): Astro [`http://localhost:4321/`](http://localhost:4321/), Next.js [`http://localhost:3000/`](http://localhost:3000/), Sanity Studio [`http://localhost:3333/`](http://localhost:3333/).
+- Same port can be two processes: `localhost` often binds IPv6 (`::1`), `--host 127.0.0.1` binds IPv4. They are not the same server. Don't treat two `:4321` listeners as duplicates; don't kill one to "clean up."
+- Open the host the process bound to. Printed URL or `--host 127.0.0.1` → `http://127.0.0.1:<port>/`; otherwise `http://localhost:<port>/`. A response on `localhost:<port>` is not proof *this* project is already served — match cwd/command, then reuse that URL.
 - If the default port belongs to a *different* project, do not kill that server. Use the next free port, or the URL this project's already-running server printed.
 - Start `dev` only when nothing is serving this project.
 
