@@ -32,6 +32,20 @@ Single source of truth. Shared build rules + pre-launch checklist.
 - Prefer reuse over one-off markup.
 - No em dashes in copy. Use commas, colons, or separate sentences instead.
 
+### Markup / layout
+
+- Landmark outside, container inside: `<section>` (or `header` / `nav` / `main` / `article` / `aside` / `footer`) wraps a site-wide container, not the reverse.
+- Landmarks for meaning: `<section>` only for a thematic block with its own heading. Generic wrappers stay `div`.
+- One `<main>` per page. Don't wrap `header` / `footer` / `nav` in extra `<section>`s.
+- Container is site-wide: one component or utility (`max-width`, horizontal padding, centering). Don't re-invent per block.
+- Full-bleed bands (hero, background) stay full width; put the container only around the inner content.
+
+### Content / data files
+
+- Central `data.ts` (or `content.ts` / similar) is for site-wide, rarely-edited facts only: business address, social links, org name, phone.
+- Page copy stays in the page or component: headlines, body, FAQs, testimonials, nav labels, section text.
+- Content that editors will change often belongs in the CMS, not a TypeScript file.
+
 ### Interactions
 
 - Links are links: use `<a>` (or framework `<Link>`) for navigation, not `<button>` or `<div>`.
@@ -116,7 +130,8 @@ Walk **All projects** on every launch. Then walk the technology sections that ap
 - [ ] [Open Graph](https://ogp.me/) image & settings
 - [ ] Social share preview checked
 - [ ] [Schema.org](https://schema.org/)
-- [ ] Semantic tags (nav, section, heading, footer)
+- [ ] Semantic tags (nav, main, section, heading, footer)
+- [ ] Landmark wraps the shared site-wide container (full-bleed only when intended)
 - [ ] Heading hierarchy matches outline
 - [ ] Canonical URLs
 - [ ] `robots.txt` + sitemap
