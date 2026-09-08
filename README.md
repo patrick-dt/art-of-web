@@ -1,4 +1,4 @@
-<h1 align="center">Art of Web</h1>
+<h1 align="center">designtakt web framework</h1>
 
 <p align="center">
   <a href="PRINCIPLES.md">Principles</a> |
